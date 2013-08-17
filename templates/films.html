@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+分类页面
+{% endblock %}
+
+{% block nav %}
+<li><a href="/">首页</a></li>
+<li class="active"><a href="/comment">留言</a></li>
+{% endblock %}
+
+
+{% block head %}
+<style type="text/css">
+  #video {
+    width: 700px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>片名</td>
+      <td>集数</td>
+      </tr>
+  </thead>
+  <tbody>
+    {% for film in films %}
+      <tr>
+        <td><a href="/g/1/{{ film[1] }}">{{ film[0] }}</a></td>
+        <td>{{ film[2] }}</td>
+
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

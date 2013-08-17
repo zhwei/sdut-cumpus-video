@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ name }}
+{% endblock %}
+
+{% block head %}
+<style type="text/css">
+  #video {
+    width: 700px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h3>{{ name }}</h3>
+
+<div class="row">
+  <video class='span9' src="{{ url }}" controls>
+    您的浏览器不支持html5!
+  </video>
+</div>
+
+<div style="clear: both;">
+  <br>
+</div>
+
+{% if ji_all %}
+
+<div class="breadcrumb">
+  <ul>
+    <li  class="disabled">
+    </li>
+    {% for nu in ji_all %}
+    <li><a href="/g/{{ nu }}/{{ film_id }}">第{{ nu }}集</a> <span class="divider">/</span></li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endif %}
+
+<div style="clear: both;"><br></div>
+
+<div id='download'>
+  <ul class="breadcrumb">
+    <li><a href="{{ url }}">点击下载(目标另存为)</a> <span class="divider">/</span></li>
+  </ul>
+</div>
+
+{% endblock %}
