@@ -9,6 +9,7 @@
 <li class="active"><a href="/comment">留言</a></li>
 {% endblock %}
 
+{% block pagewidth %}960{% endblock %}
 
 {% block head %}
 <style type="text/css">
@@ -24,6 +25,8 @@
   <thead>
     <tr>
       <td>片名</td>
+      <td>短述</td>
+      <td>剧情</td>
       <td>集数</td>
       </tr>
   </thead>
@@ -31,9 +34,13 @@
     {% for film in films %}
       <tr>
         <td><a href="/g/1/{{ film[1] }}">{{ film[0] }}</a></td>
+        <td>{{ film[4] }}</td>
+        <td>{{ film[3] }}</td>
         <td>{{ film[2] }}</td>
 
       </tr>
+    {% else %}
+    <td>本分类没有电影</td>
     {% endfor %}
   </tbody>
 </table>

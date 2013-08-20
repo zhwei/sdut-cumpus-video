@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>{% block title %}{% endblock %} 校内视频 &middot; Got it</title>
+    <title>{% block title %}{% endblock %} &middot;  校内视频 &middot; Got it</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -23,7 +23,7 @@
       /* Custom container */
       .container-narrow {
         margin: 0 auto;
-        max-width: 700px;
+        max-width: {% block pagewidth %}700{% endblock %}px;
       }
       .container-narrow > hr {
         margin: 30px 0;
@@ -70,8 +70,13 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
+          {% if video_type %}
           <li class="active"><a href="/">首页</a></li>
           <li><a href="/comment">留言</a></li>
+          {% else %}
+          <li><a href="/">首页</a></li>
+          <li class="active"><a href="/comment">留言</a></li>
+          {% endif %}
         </ul>
         <h3 class="muted">Got it</h3>
       </div>

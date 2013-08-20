@@ -4,50 +4,50 @@
 首页
 {% endblock %}
 
-{% block nav %}
-<li class><a href="/">首页</a></li>
-<li="active"><a href="/comment">留言</a></li>
-{% endblock %}
-
 {% block content %}
 
 
 
 <div class="row-fluid">
 
-	<div id='video_type'>
-		<ul class="breadcrumb">
-  			<li><a href="">影视类型</a> <span class="divider">/</span></li>
-		</ul>
-		{% for video in video_type %}
-			<span><a href="/t/g/{{ video }}">{{ video }}</a></span>
-		{% endfor %}
-		<div style='clear:both;'><br></div>
-	</div>
-	<div id='diqu'>
-		<ul class="breadcrumb">
-  			<li><a href="">地区分类</a> <span class="divider">/</span></li>
-		</ul>
-		{% for d in diqu %}
-			<span><a href="/t/f/{{ d }}">{{ d }}</a></span>
-		{% endfor %}
-		<div style='clear:both;'><br></div>
-	</div>
-	<div id='juqing'>
-		<ul class="breadcrumb">
-  			<li><a href="">剧情分类</a> <span class="divider">/</span></li>
-		</ul>
-		{% for j in juqing %}
-			<span><a href="/t/e/{{ j }}">{{ j }}</a></span>
-		{% endfor %}
-		<div style='clear:both;'><br></div>
-	</div>
+  <div id='video_type'>
+    <ul class="breadcrumb">
+      <li><a href="">影视类型</a> <span class="divider">/</span></li>
+    </ul>
+    {% for video in video_type %}
+    <span>
+      <a href="/t/g/{{ video }}">{{ video }}</a>
+    </span>
+    {% endfor %}
+    <div style='clear:both;'><br></div>
+  </div>
+  <div id='diqu'>
+    <ul class="breadcrumb">
+      <li><a href="">地区分类</a> <span class="divider">/</span></li>
+    </ul>
+    {% for d in diqu %}
+    <span><a href="/t/f/{{ d }}">{{ d }}</a></span>
+    {% endfor %}
+    <div style='clear:both;'><br></div>
+  </div>
+  <div id='juqing'>
+    <ul class="breadcrumb">
+      <li><a href="">剧情分类</a> <span class="divider">/</span></li>
+    </ul>
+    {% for j in juqing[1:] %}
+    <span><a href="/t/e/{{ j }}">{{ j }}</a></span>
+    {% if loop.index % 10 == 0%}
+        <br /><br />
+    {% endif %}
+    {% endfor %}
+    <div style='clear:both;'><br></div>
+  </div>
 
 </div>
 
 <div style='clear:both;'><br></div>
 <div class="jumbotron">
-<h1>Relax!</h1>
+  <h1>Relax!</h1>
 </div>
 <hr>
 

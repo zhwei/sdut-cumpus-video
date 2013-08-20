@@ -13,7 +13,7 @@ from autocache import memorize
 
 urls = (
     '/', 'index',
-    '/g/([0-9]+)/([0-9A-Z]+)', 'get_video',
+    '/g/([0-9]+)/([0-9a-zA-Z]+)', 'get_video',
     '/t/([a-z]+)/(.*)', 'get_tag_films',
     '/comment', 'comment'
 )
@@ -52,13 +52,15 @@ class get_video:
 
         ji_nu = int(f.get_text(film, 'h'))
 
+        short_dec=f.get_text(film, 's')
+
         if ji_nu == 1:
             ji_all = None
         else:
             ji_all = range(1, ji_nu+1)
 
         return render.video(name=link[0], url=link[1],
-                ji_all=ji_all, film_id=video_id)
+                ji_all=ji_all, film_id=video_id, short_dec=short_dec)
         # except:
         #    raise web.notfound()
 

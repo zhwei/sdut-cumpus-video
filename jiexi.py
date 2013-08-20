@@ -96,10 +96,10 @@ class Films:
 
         for film in self.tree.iter(tag='film'):
 
-            if self.get_text(film, tag) == tag_content.decode('utf-8'):
-
-                tuple_films = self.get_list(film, ('a','b','h'))
-
+            #if self.get_text(film, tag) == tag_content.decode('utf-8'):
+            #print self.get_text(film, str(tag)), '---',tag_content.decode('utf-8')
+            if str(tag_content.decode('utf-8')) in str(self.get_text(film, tag)):
+                tuple_films = self.get_list(film, ('a','b','h', 'e', 's'))
                 film_list.append(tuple_films)
             else:
                 continue

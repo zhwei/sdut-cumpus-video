@@ -15,16 +15,16 @@
 {% block content %}
 
 <h3>{{ name }}</h3>
+<h4>{{ short_dec }}</h4>
+<div style="clear: both;"><br></div>
 
 <div class="row">
-  <video class='span9' src="{{ url }}" controls>
+  <video class='span9' src="{{ url }}" controls autoplay>
     您的浏览器不支持html5!
   </video>
 </div>
 
-<div style="clear: both;">
-  <br>
-</div>
+<div style="clear: both;"><br></div>
 
 {% if ji_all %}
 
@@ -33,7 +33,7 @@
     <li  class="disabled">
     </li>
     {% for nu in ji_all %}
-    <li><a href="/g/{{ nu }}/{{ film_id }}">第{{ nu }}集</a> <span class="divider">/</span></li>
+    <li><a title="{{ name }}-第{{ nu }}集" href="/g/{{ nu }}/{{ film_id }}">第{{ nu }}集</a> <span class="divider">/</span></li>
     {% endfor %}
   </ul>
 </div>
@@ -44,8 +44,7 @@
 
 <div id='download'>
   <ul class="breadcrumb">
-    <li><a href="{{ url }}">点击下载(目标另存为)</a> <span class="divider">/</span></li>
+    <li><a title="{{ name }}" href="{{ url }}">点击下载(目标另存为)</a> <span class="divider">/</span></li>
   </ul>
 </div>
-
 {% endblock %}
