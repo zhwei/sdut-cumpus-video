@@ -8,7 +8,7 @@ URL = "http://10.18.1.1/"
 
 class Films:
 
-    tree = ET.ElementTree(file='sources/source.xml')
+    tree = ET.ElementTree(file='sources/total.xml')
     root = tree.getroot()
 
     def __init__(self):

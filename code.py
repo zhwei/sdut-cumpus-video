@@ -83,6 +83,7 @@ class comment:
 
 
 
-application = web.application(urls, globals(), autoreload=False).wsgifunc()
+app = web.application(urls, globals(), autoreload=False)
+application = app.wsgifunc()
 #if __name__ == "__main__":
 #    app.run()
